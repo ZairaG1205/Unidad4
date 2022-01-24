@@ -7,17 +7,4 @@
 
   /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background: linear-gradient(to right, rgb(248, 184, 45), rgb(109, 233, 233))
-  }
-  .gatos{
-      position:absolute;
-      margin-left:650px;
-      margin-top: 50px;
-  }
-  .logo{
-      height: 50px;
-      width: 75px;
-  }
-  .card{
-    background-color: rgba(247, 247, 247, 0.068);
-    box-shadow: 0 0 0.5rem rgb(0, 0, 0);
-  }
+}
