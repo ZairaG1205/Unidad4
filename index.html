@@ -13,20 +13,20 @@
     />
     <!-- CDN Css Personalizado -->
     <link rel="stylesheet" href="assets/index.css"/>
-    <link rel="icon" href="assets/animal-0.2s-250px (1).png">
-    <title>🐾Entre patas</title>
+    <link rel="icon" href="assets/img/animal-0.2s-250px (1).png">
+    <title>Entre patas</title>
     
   </head>
   <body class="gradient-custom">
     <nav class="navbar navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand"><img class="logo" src="assets/logito.png"></a>
+        <a class="navbar-brand"><img class="logo" src="assets//img/logito.png"></a>
         <div class="d-flex">
-          <button id="logout" class="btn btn-outline-info"><img src="assets/log out-100s-284px.png" style="width: 40px; height: 40px;"> Cerrar sesión</button>
+          <button id="logout" class="btn btn-outline-info"><img src="assets/img/log out-100s-302px.png" style="width: 40px; height: 40px;"> Cerrar sesión</button>
         </div>
       </div>
     </nav>
-    <img  class="gatos" src="assets/gatos login.png">
+    <img  class="gatos" src="assets/img/gatos login.png">
     <div class="container mt-5">
       <div class="container py-5 h-100" id="login">
         <div class="row d-flex justify-content-left align-items-center h-100 ">
@@ -105,8 +105,27 @@
         </div>
       </div>
 
-      <div class="card bg-dark text-white mx-auto" id="contenidoWeb" style="border-radius: 1rem; width: 800px;">
+      <div class="card mx-auto" id="contenidoWeb" style="border-radius: 1rem; width: 800px;  background-color: rgba(247, 247, 247, 0.068);
+      box-shadow: 0 0 0.5rem rgb(16, 107, 114);">
         <div class="card-body">
+          <!--<div class="recievedBox">
+            <button class="like"> <img class="patalike" src="assets/img/paw-100s-276px (2).png"> Like <p class="likeNum">0</p></button>
+            <script>
+              const getLike = document.querySelector('.like');
+              const getLikeNum = document.querySelector('.likeNum');
+              //like button
+              let like = 0;
+              increaseLike = () => {
+                  like ++
+                  getLikeNum.innerHTML = `${like}`
+              }
+              likeClick = () => {
+                  increaseLike()
+              }
+              getLike.addEventListener(('click'), likeClick)
+          </script>
+        </div>
+        !-->
           <form id="postForm"action="">
             
             <h5>Escribe tu mensaje</h5>
@@ -121,8 +140,6 @@
         </div>
       </div>
       <div id="postList">
-        
-      </div>
     </div>
     <!-- CDN Bootstrap js -->
     <script

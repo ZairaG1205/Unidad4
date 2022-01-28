@@ -167,7 +167,7 @@ $(document).ready(function () {
       // si la coleccion no existe, la crea implicitamente
       var d = new Date();
       var strDate = d.getDate() + "-" + (d.getMonth()+1) + "-" + d.getFullYear();
-      var strHours = d.getHours() + ":" + d.getMinutes();
+      var strHours = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
       db.collection("posts").add({
         mensaje: mensaje,
         fecha: strDate,
@@ -200,7 +200,7 @@ $(document).ready(function () {
       // si la coleccion no existe, la crea implicitamente
       var d = new Date();
       var strDate = d.getDate() + "-" + (d.getMonth()+1) + "-" + d.getFullYear();
-      var strHours = d.getHours() + ":" + d.getMinutes();
+      var strHours = d.getHours() + ":" + d.getMinutes() + ":" + d.getSeconds();
       db.collection("posts").doc(id).update({
         mensaje: mensaje,
         fecha: strDate,
@@ -233,16 +233,18 @@ $(document).ready(function () {
       data.forEach(doc => {
         const post = doc.data();
         const div = `
-          <div class="card bg-dark text-white  mt-3 mx-auto" style="border-radius: 1rem; width: 800px;">
+          <div class="card text-white  mt-3 mx-auto" style=" background-color: rgba(14, 124, 128, 0.685); border-radius: 1rem; width: 800px;">
             <div class="card-body">
               <p>${post.mensaje}</p>
               <p>Publicado el ${post.fecha} a las ${post.hora}</p>
               <button data-id="${doc.id}" class="btn btn-success btn-edit-post">
                 Editar
-              </button>
               <button data-id="${doc.id}" class="btn btn-danger btn-delete-post">
                 Eliminar
               </button>
+              <div class="recievedBox">
+          <button class="like">  <img class=patalike src="assets/img/paw-100s-276px (2).png"> Like<p class="likeNum">0</p></button>
+      </div>
             </div>
           </div>
         `;
@@ -267,11 +269,23 @@ $(document).ready(function () {
           obtienePost(id);
         })
       })
+      const getLike = document.querySelector('.like');
+      const getLikeNum = document.querySelector('.likeNum');
+      //like button
+      let like = 0;
+      increaseLike = () => {
+          like ++
+          getLikeNum.innerHTML = `${like}`
+      }
+      likeClick = () => {
+          increaseLike()
+      }
+      getLike.addEventListener(('click'), likeClick)
     }else {
       let html = '';
       let tr = `
         <tr>
-          <td class="text-center"colspan="4">No existen datos, favor ingresar datos.</td>
+          <td class="text-center" colspan="4">No existen datos, favor ingresar datos.</td>
         <tr>
       `;
       html += tr;
